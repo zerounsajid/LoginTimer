@@ -1,0 +1,90 @@
+
+<center>
+    <ion-content padding class="timer">
+    <ion-grid>
+      <ion-row>
+        <ion-col col><br><br>
+          <div class="progress">
+            <timer  interval="1000"> {{mytimer.minute}}m : {{mytimer.second}}s </timer>  
+          </div>
+
+        </ion-col col>
+      </ion-row>
+       </ion-grid>
+       <!-- Here you have the different states that the buttons take during the process -->
+      <!-- Before starting -->
+        <div ng-if="!unit && !paused && !done">
+        <div class="row">
+          <div class="col" >
+            <button id="setimer" class="button button-round button-calm button-outline" ng-click="setime()">Set time</button>
+          </div>
+        </div>
+      </div>
+      <!-- Before starting the timer -->
+        <div ng-if="first && !done">
+        <div class="row">
+          <div class="col">
+            <button id="setimer" class="button button-round button-balanced button-outline" ng-click="start1()" ng-disabled="mytimer.startbtn" >Start</button>
+          </div>
+        </div>
+      </div>
+      <!-- Once it is running -->
+       <div ng-if="started && !div">
+        <div class="row">
+          <div class="col">
+           <button id="reset" class="icon ion-pause button button-round button-energized button-outline" ng-click="pause()" ng-disabled="mytimer.pausebtn"></button>
+          </div>
+          <div class="col">
+            <button id="reset" class="button button-round button-calm button-outline" ng-click="setime()"  >Set time</button>
+          </div>
+           
+        </div>
+        <button id="logout" class="icon ion-power button button-round button-assertive button-outline" ng-click="logout()"></button>
+      </div>
+       <!-- Once it is paused -->
+      <div ng-if="!started && paused && !done">
+        <div class="row">
+          <div class="col">
+            <button id="reset" class="icon ion-play button button-round button-balanced button-outline" ng-click="start()" ng-disabled="mytimer.startbtn" ></button>
+          </div>
+          <div class="col">
+            <button id="reset" class="button button-round button-calm button-outline" ng-click="setime()">Set time</button>
+          </div>
+        </div>
+         <button id="logout" class="icon ion-power button button-round button-assertive button-outline" ng-click="logout()"></button>
+      </div>
+       <!-- When it has completed -->
+      <div ng-if="done" class="text-center">
+        <div class="row">
+            <button class="button button-outline button-balanced button-rounded button-block" ng-click="modal.hide();stopTimer(true);">
+              Done
+            </button>
+        </div>
+        <div class="text-center">
+            <i class="ion-ribbon-b bigIcon" style="font-size: 40px;"></i>
+            <br>
+            <h2>Congratulations</h2>
+        </div>
+      </div>
+      <!-- <ion-row>
+        <ion-col col id=btn>
+            <button class="icon ion-pause button button-round button-energized button-outline" ng-click="pause()" ng-disabled="mytimer.pausebtn" style="margin-right: 10px;"></button>
+        </ion-col col>
+        <ion-col col id=btn>
+            <button class="icon ion-play button button-round button-balanced button-outline" ng-click="start()" ng-disabled="mytimer.startbtn" ></button>
+        </ion-col col>
+        <ion-col col id=btn>
+            <button class="icon ion-stop button button-round button-assertive button-outline" ng-click="stop()" ng-disabled="mytimer.stopbtn" style="margin-left:10px;"></button>
+        </ion-col col>
+      </ion-row>
+      <ion-row justify-content-center>
+        <ion-col  >
+            <button id="reset" class="button button-round button-balanced button-outline" ng-click="setime()"  >Set time</button>
+            <mbsc-form>
+   
+</mbsc-form>
+          </ion-col col>
+      </ion-row> -->
+   
+ </ion-content>   
+</center>

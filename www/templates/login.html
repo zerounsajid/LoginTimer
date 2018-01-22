@@ -1,0 +1,44 @@
+  
+<link href="css/style.css" rel="stylesheet">
+
+     <ion-header-bar class="bar-stable">
+              <h1 class="title">Timer App </h1>
+  </ion-header-bar>
+
+  <ion-content class="padding1" scroll="false" >
+    <form name="myForm" ng-submit="doLogin()"  >
+          <div id="header">Login</div>
+
+           <label class="item item-input item-stacked-label" >
+                      <span class="input-label" >Email :</span>
+                      <input type="text" name="username" id="email" placeholder="Enter Username" ng-model="loginData.username" ng-minlength="6" required>
+              </label>
+               <div class="val">  
+            <p ng-show="myForm.username.$invalid && !myForm.username.$pristine">* Username must be an email address</p>
+             <p ng-show="myForm.username.$error.minlength">* Username must be longer than 6 characters</p>
+            </div>
+
+               <label class="item item-input item-stacked-label" >
+                      <span class="input-label" >Password :</span>
+                      <input type="password" name="password" id="password" placeholder="Enter password" ng-model="loginData.password" ng-minlength="6" required>
+              </label>
+       
+                <br>         
+    </ion-nav-buttons>
+    </div>
+            <div class="val" >
+            <p ng-show="myForm.password.$error.minlength" >* Password must be longer than 6 characters</p> 
+            </div>           
+    </form>
+
+        <div class="row no-padding" style="width:100%;" >
+
+        <div class="col col-50 no-padding "  ng-click="doLogin()" style="align-self: center">
+        <button class="button button-block button-balanced button-outline no-margin" style="width: 100%;align-self: center;font-size: 16px;padding:5px">Login</button>
+      </div>
+        <div class="col col-50 no-padding " ng-click="signup1()" style="align-self: center">
+        <button class="button button-solid button-assertive  button-outline no-margin" style="width: 100%;font-size: 16px;padding:5px">Sign up</button>
+        </div>     
+  </ion-content>
+
+</ion-modal-view>

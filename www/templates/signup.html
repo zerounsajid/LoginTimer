@@ -1,0 +1,92 @@
+
+    <link href="css/style.css" rel="stylesheet">
+
+  
+  <ion-content class="padding2">
+  
+    <form name="loginForm" ng-submit="login()">
+      <div id="header1">Register</div>
+    <div align="center" class="loginlogo" >
+          </div>    
+     <center>
+        <div class="list">
+        <div class="list no-padding" id="log" >
+         
+              
+              <label class="item item-input item-stacked-label" >
+                      <span class="input-label" id=first>First Name :</span>
+                      <input type="text" name="fname" id="fname" placeholder="Enter First Name" ng-model="data.fname" pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$" ng-minlength="4" required>
+              </label>
+
+              <div class="val">  
+                  
+                <p ng-show="loginForm.fname.$error.pattern">* First name not Contain spacial character or Number</p>
+               </div>
+
+                <label class="item item-input item-stacked-label">
+                        <span class="input-label">Last Name :</span>
+                        <input type="text" name="lname" placeholder="Enter Last Name" id="lname" ng-model="data.lname" pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$" required>
+                </label>
+
+                  <div class="val">  
+                     <p ng-show="loginForm.lname.$error.pattern">* Last name not Contain spacial character or Number</p>
+                  </div>
+
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Email :</span>
+                    <input type="email" name="email" placeholder="Enter Email id" id="email" ng-model="data.email" ng-minlength="5" required>
+                </label>
+               
+                <div class="val">  
+                    <p ng-show="loginForm.email.$invalid && !loginForm.email.$pristine">* Invalid email address</p>
+                    <p ng-show="loginForm.email.$error.minlength">* Username must be longer than 5 characters</p>
+                </div>
+
+
+                <label class="item item-input item-stacked-label" >
+                   <span class="input-label">Phone :</span>
+                  <input class="a" type="number" name="num" placeholder="Enter Phone No." id="num" ng-model="data.phone" ng-maxlength="10" required>
+                </label>
+                 <div class="val">  
+                 <p ng-show="loginForm.num.$error.maxlength">* Number Should be 10 Digite </p>
+               </div></b>
+
+                <label class="item item-input item-stacked-label" >
+                  <span class="input-label">Password :</span>
+                  <input type="password" name="password" placeholder="Enter Password" id="password" ng-model="data.pass" ng-minlength="6" required>                  
+                </label>  
+
+                <div class="val">
+                    <p ng-show="loginForm.password.$error.minlength">* Password must be longer than 6 characters</p> 
+                </div>
+
+                <label class="item item-input item-stacked-label" >
+                  <span class="input-label">Conform :</span>
+                  <input  type="password" name="cpassword" placeholder="Renter Password" id="cpass" ng-model="data.cpass" ng-minlength="6" required>                  
+                </label>
+                <div class="val">
+                    <p ng-show="loginForm.password.$error.minlength">* Password must be longer than 6 characters</p> 
+                </div>
+        </div>
+           
+          <div class="row no-padding" style="width:100%;" >
+              <div class="col col-50 no-padding "  ng-click="signup()" style="align-self: center">
+                  <button class="button button-round button-balanced button-outline no-margin" style="width: 100%;align-self: center;font-size: 16px;padding:5px">Sign Up</button>
+              </div>
+              <div class="col col-50 no-padding " ng-click="reset1()" style="align-self: center">
+                  <button class="button button-round button-assertive button-outline no-margin" style="width: 100%;font-size: 16px;padding:5px">Reset</button>
+              </div>
+          </div>
+
+            </center>
+        </form>
+        <br><br><br>
+        
+    
+    </ion-content>
+    <!--div class = "bar bar-footer" id="footer">
+      <p  class="addressText">Developed by</br>
+          <a href ="http://www.shreewebs.com/#contact">Shree Webs And IT Services</a></p>
+   </div-->
+  </ion-view>
